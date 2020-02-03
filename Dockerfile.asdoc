@@ -1,0 +1,20 @@
+FROM golang:1-alpine AS builder
+
+# RUN apk update && apk --no-cache add git
+ADD ./aserver /aserver
+WORKDIR /aserver
+RUN go install aserver
+
+FROM asciidoctor/docker-asciidoctor
+LABEL maintainer="saces@c-base.org"
+
+RUN apk update && apk add --no-cache git
+
+ADD ./asciidoctor-ext /asciidoctor-ext
+ADD ./scripts /scripts
+
+VOLUME /git-data
+
+COPY --from=builder /go/bin/ /go/bin/
+
+CMD ["/go/bin/aserver"]

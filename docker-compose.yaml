@@ -1,0 +1,28 @@
+version: "3.6"
+services:
+  gitea:
+    image: gitea/gitea:1
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - DISABLE_REGISTRATION=true
+      - RUN_MODE=prod
+    restart: always
+    volumes:
+      - ./gitea-data:/data
+      - ./scripts:/scripts
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "127.0.0.1:3000:3000"
+      - "127.0.0.1:2222:22"
+
+  asciidoctor:
+    build:
+      context: .
+      dockerfile: Dockerfile.asdoc
+    restart: always
+    volumes:
+      - ./gitea-data/git/repositories:/git-data:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro

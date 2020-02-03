@@ -1,0 +1,14 @@
+
+== giteasciidoc
+
+I accidentally wrote a docker-compose for gitea and asciidoctor with includes…
+
+=== tl;dr
+
+ - get this projects source
+ - docker-compose up -d --build
+ - http://localhost:3000
+   ** configure gitea, create a project
+   ** push this source
+   ** enjoy the samples in /test :)
+

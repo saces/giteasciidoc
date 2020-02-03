@@ -1,0 +1,26 @@
+
+== before
+
+
+text text text
+
+
+include::included.adoc[]
+
+=== another include
+
+include::fragment.ainc[]
+
+### valid tests
+
+include::../included.adoc[]
+
+include::\included.adoc[]
+
+include::https://server.com/included.adoc[]
+
+
+== after
+
+
+txet txet txet

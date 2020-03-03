@@ -1,7 +1,9 @@
 version: "3.6"
 services:
   gitea:
-    image: gitea/gitea:1
+    build:
+      context: ./gitea
+      dockerfile: Dockerfile
     environment:
       - USER_UID=1000
       - USER_GID=1000
@@ -23,6 +25,5 @@ services:
       dockerfile: Dockerfile.asdoc
     restart: always
     volumes:
-      - ./gitea-data/git/repositories:/git-data:ro
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro

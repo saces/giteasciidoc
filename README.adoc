@@ -12,3 +12,14 @@ I accidentally wrote a docker-compose for gitea and asciidoctor with includes…
    ** push this source
    ** enjoy the samples in /test :)
 
+==== Configure gitea
+
+Add this to app.ini
+
+----
+[markup.asciidoc]
+ENABLED         = true
+FILE_EXTENSIONS = .adoc,.asciidoc
+RENDER_COMMAND  = /scripts/giteawrapper.sh
+IS_INPUT_FILE   = false
+----

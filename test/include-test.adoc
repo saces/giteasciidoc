@@ -13,6 +13,12 @@ include::fragment.ainc[]
 
 ### valid tests
 
+include::/test/included.adoc[]
+
+include:://test/giteasciidoc/raw/branch/develop/test/included.adoc[]
+
+### invalid tests
+
 include::../included.adoc[]
 
 include::\included.adoc[]

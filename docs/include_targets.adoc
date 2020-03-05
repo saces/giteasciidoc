@@ -17,4 +17,4 @@ include types:
     path from repository root
 
   //user/repos/type/name/filepath
-    full repos url. needs loop detection
+    full repos url.

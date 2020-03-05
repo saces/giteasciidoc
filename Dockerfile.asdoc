@@ -8,10 +8,9 @@ RUN go install aserver
 FROM asciidoctor/docker-asciidoctor
 LABEL maintainer="saces@c-base.org"
 
-RUN apk update && apk add --no-cache git
+# RUN apk update && apk add --no-cache git
 
 ADD ./asciidoctor-ext /asciidoctor-ext
-ADD ./scripts /scripts
 
 COPY --from=builder /go/bin/ /go/bin/
 

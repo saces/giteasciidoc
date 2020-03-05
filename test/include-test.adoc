@@ -15,7 +15,7 @@ include::fragment.ainc[]
 
 include::/test/included.adoc[]
 
-include:://test/giteasciidoc/raw/branch/develop/test/included.adoc[]
+include:://test/giteasciidoc/branch/develop/test/included.adoc[]
 
 ### invalid tests
 

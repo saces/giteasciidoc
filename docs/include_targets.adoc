@@ -1,0 +1,20 @@
+
+forbidden stuff:
+  '..' parent dir: needs proper 'do not leave the project root' checking before
+       allowed. Also loop detection. Send a patch!
+  '\'  backslash: escape character. To make proper use of it, go to
+       https:www.hackthebox.eu or join a local CTF group
+  ':'  urls: nah. not. nope. maybe when fetched through tor. Send a patch!.
+  '%'  url encoding. nope. welcome to the unicode world!
+
+include types:
+  filename.adoc
+  dir/filename.adoc
+    path frome where the including documents is
+
+  /filename.adoc
+  /dir/filename.adoc
+    path from repository root
+
+  //user/repos/type/name/filepath
+    full repos url. needs loop detection

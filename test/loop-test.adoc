@@ -1,0 +1,14 @@
+
+== before
+
+
+text text text
+
+
+include::loop-test.adoc[]
+
+
+== after
+
+
+txet txet txet
